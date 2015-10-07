@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
 	def show
 		@project = Project.find(params[:id])
+		@product = Product.new
 	end
 
 	def new
