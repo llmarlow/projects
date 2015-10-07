@@ -1,4 +1,6 @@
+<div class="booyah-box col-xs-10 col-xs-offset-1">
 <% @projects.each do |project| %>
-<%= project.name %>
-<%= project.description %>
+<h2><%= link_to project.name, project_path(project) %></h2><br />
+<p><%= project.description %></p>
 <% end %>
+</div>
