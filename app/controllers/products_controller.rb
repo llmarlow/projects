@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 	def create
-		@project = Project.find(params[:project_id])
+		@project = Project.find(params[:id])
 		@project.product.create(product_params)
 		redirect_to project_path(@project)
 	end
