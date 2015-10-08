@@ -3,11 +3,19 @@
 	<p><%= @project.description %></p>
 
 <div class="clear"></div>
-<%= simple_form_for @product, :url => project_product_path(@project) do |f| %>
+<%= simple_form_for @product, :url => project_products_path(@project) do |f| %>
     <%= f.input :name %>
     <%= f.input :quantity %>
     <br />
     <%= f.submit 'Create', :class => 'btn btn-primary' %>
 <% end %>
 </div>
-<%= params.inspect %>
+<div class="clear"></div>
+<h1>Products</h1>
+
+<% @project.products.each do |product| %>
+  <ul>
+      <li><%= product.name %></b> -
+        <%= product.quantity %></li>
+  </ul>
+<% end %>
